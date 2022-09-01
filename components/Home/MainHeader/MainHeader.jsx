@@ -1,11 +1,11 @@
 import Link from 'next/link';
+import Image from 'next/future/image';
 import MainText from './MainText/MainText';
 import Button from '../../../utils/Button/Button';
 import styles from './MainHeader.module.css';
 import submarineLogo from '../../../public/submarine.png';
 import arrowLogo from '../../../public/arrow.png';
 import singleLadkaLogo from '../../../public/singleLadka.jpg';
-import Image from 'next/future/image';
 
 const MainHeader = () => {
   return (

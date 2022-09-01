@@ -1,4 +1,7 @@
 import EachFeature from './EachFeature/EachFeature';
+import BrainImage from '../../../public/brain.png';
+import DiamondImage from '../../../public/diamond.png';
+import CodeImage from '../../../public/code.png';
 import styles from './Features.module.css';
 
 const Features = () => {
@@ -33,7 +36,7 @@ const Features = () => {
           <EachFeature
             heading='Intution'
             text='How about building intuitions rather than solutions?'
-            image={'/brain.png'}
+            image={BrainImage}
           />
         </div>
         <div className={styles.featuresItem}>
@@ -41,7 +44,7 @@ const Features = () => {
             heading='Clarity'
             text='Have absolute clarity of solutions and solve silliest of your doubts.'
             color='pink'
-            image={'/diamond.png'}
+            image={DiamondImage}
           />
         </div>
         <div className={styles.featuresItem}>
@@ -49,7 +52,7 @@ const Features = () => {
             heading='Implementation'
             text='Learn to write clean, concise and easy to understand code.'
             color='yellowOrange'
-            image={'/code.png'}
+            image={CodeImage}
             smallIcon
           />
         </div>

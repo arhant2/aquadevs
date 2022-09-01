@@ -1,7 +1,6 @@
 import LazyShow from '../../../utils/LazyShow/LazyShow.jsx';
 import CheckPoint from './CheckPoint/CheckPoint.jsx';
 import styles from './RoadMap.module.css';
-import Image from 'next/future/Image';
 import jigsaw from '../../../public/jigsaw.png';
 import tools from '../../../public/tools.png';
 import goal from '../../../public/goal.png';

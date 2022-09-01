@@ -1,6 +1,4 @@
-import { addDoc, collection } from 'firebase/firestore';
-import Link from 'next/link';
-import db from '../../../../db';
+import Image from 'next/future/image';
 import styles from './EachFeature.module.css';
 
 // colors = 'blue'(default), 'yellowOrange', 'pink'
@@ -17,12 +15,12 @@ const EachFeature = (props) => {
     >
       <div className={styles.eachFeatureTriangleOuter}>
         <div className={styles.eachFeatureTriangle}>
-          <img
+          <Image
             className={`${styles.eachFeatureTriangleImage} ${
               props.smallIcon ? styles.eachFeatureTriangleImage__small : ''
             }`}
             src={props.image}
-            alt='...'
+            alt={props.heading}
           />
         </div>
       </div>
