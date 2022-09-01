@@ -1,0 +1,104 @@
+.eachFeature {
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* 850px / 16 = 53.125em */
+@media screen and (max-width: 53.125em) {
+  .eachFeature {
+    width: auto;
+    align-items: center;
+  }
+}
+
+/* 700px / 16 = 43.75em */
+/* @media screen and (max-width: 43.75em) {
+  .eachFeature {
+    flex-direction: row;
+  }
+} */
+
+.eachFeature .eachFeatureTriangleOuter {
+  padding-left: 5rem;
+  filter: drop-shadow(1.5px 9px 4.5px #61b4f688);
+  transition: 0.2s;
+}
+
+/* 850px / 16 = 53.125em */
+@media screen and (max-width: 53.125em) {
+  .eachFeature .eachFeatureTriangleOuter {
+    padding-left: 0;
+  }
+}
+
+.eachFeature .eachFeatureTriangleOuter:hover {
+  filter: drop-shadow(2px 12px 6px #61b4f688);
+  transform: translateY(-3px) scale(1.01);
+}
+
+.eachFeatureTriangle {
+  padding: 0;
+  background-image: linear-gradient(
+    to right,
+    var(--color-blue-darker),
+    var(--color-blue)
+  );
+  background-size: cover;
+  width: 18rem;
+  height: 18rem;
+  clip-path: url('#home-features-traingle-clip');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eachFeatureTriangleImage {
+  width: 6rem;
+  position: relative;
+  left: 2.2rem;
+  bottom: 0.3rem;
+  filter: invert(0.9);
+}
+
+.eachFeatureTriangleImage__small {
+  width: 5rem;
+}
+
+.eachFeature__pink .eachFeatureTriangleOuter {
+  filter: drop-shadow(1.5px 9px 4.5px #ef5c8e88);
+}
+
+.eachFeature__pink .eachFeatureTriangleOuter:hover {
+  filter: drop-shadow(2px 12px 6px #ef5c8e88);
+}
+
+.eachFeature__pink .eachFeatureTriangle {
+  background-image: linear-gradient(
+    to right,
+    var(--color-pink-darker),
+    var(--color-pink)
+  );
+}
+
+.eachFeature__yellowOrange .eachFeatureTriangleOuter {
+  filter: drop-shadow(1.5px 9px 4.5px #ffca5588);
+}
+
+.eachFeature__yellowOrange .eachFeatureTriangleOuter:hover {
+  filter: drop-shadow(2px 12px 6px #ffca5588);
+}
+
+.eachFeature__yellowOrange .eachFeatureTriangle {
+  background-image: linear-gradient(
+    to right,
+    var(--color-yellowOrange-darker),
+    var(--color-yellowOrange)
+  );
+}
+
+.heading {
+  margin-top: 2rem;
+  font-weight: 500;
+}

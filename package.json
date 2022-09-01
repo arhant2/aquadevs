@@ -1,0 +1,28 @@
+{
+  "name": "aquadevs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "axios": "^0.27.2",
+    "firebase": "^9.9.3",
+    "firebase-admin": "^11.0.1",
+    "framer-motion": "^7.2.0",
+    "next": "12.2.5",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-toastify": "^9.0.8",
+    "validator": "^13.7.0",
+    "wow.js": "^1.2.2"
+  },
+  "devDependencies": {
+    "eslint": "8.22.0",
+    "eslint-config-next": "12.2.5"
+  }
+}

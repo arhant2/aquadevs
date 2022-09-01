@@ -1,0 +1,21 @@
+.form {
+  padding: 4rem 8rem;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: -2rem;
+}
+
+/* 700 / 16 = 43.75em */
+@media screen and (max-width: 43.75em) {
+  .form {
+    padding: 4rem 6rem;
+  }
+}
+
+.nameEmail {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 3rem;
+}

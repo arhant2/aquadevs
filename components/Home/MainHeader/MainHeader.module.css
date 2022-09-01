@@ -1,0 +1,62 @@
+.outerContainer {
+  display: flex;
+  padding: 5vh 1vw;
+}
+
+/* 950px / 16 = 59.375em */
+@media screen and (max-width: 59.375em) {
+  .outerContainer {
+    padding: 10vh 1vw;
+  }
+}
+
+/* 600px / 16 = 43.75em */
+@media screen and (max-width: 43.75em) {
+  .outerContainer {
+    flex-direction: column-reverse;
+    padding-top: 2vh;
+  }
+}
+
+.submarine {
+  width: 4rem;
+  height: auto;
+}
+
+.singleLadkaLogo {
+  width: 100%;
+  height: auto;
+}
+
+.left {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.secondaryText {
+  margin: 2rem 0;
+  font-size: 2rem;
+}
+
+.right {
+  flex: 2.8;
+}
+
+.arrow {
+  width: 2rem;
+  height: auto;
+  transform: translateY(-3px);
+  transition: 0.1s;
+}
+
+.btn {
+  display: block;
+}
+
+.btn:hover .arrow {
+  transform: rotateZ(90deg) translateX(-3px);
+}

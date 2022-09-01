@@ -1,0 +1,55 @@
+.roadMapContainer {
+  background-color: rgb(241 245 249);
+  background: url('/cloud-9.jpg');
+  background-size: cover;
+  padding: 20rem 0;
+  margin-bottom: max(-21vh, -21vw);
+  background-attachment: fixed;
+
+  clip-path: polygon(
+    0% min(21vh, 21vw),
+    30% min(16vh, 16vw),
+    calc(30% + min(5vh, 5vw)) min(10vh, 10vw),
+    100% 0,
+
+    /* 100% 100%,
+    calc(30% + 5vh) calc(100% - 10vh),
+    30% calc(100% - 16vh),
+    0 calc(100% - 21vh) */
+      100% calc(100% - min(21vh, 21vw)),
+    calc(30% + min(5vh, 5vw)) calc(100% - min(21vh, 21vw) + min(10vh, 10vw)),
+    30% calc(100% - min(21vh, 21vw) + min(16vh, 16vw)),
+    0 calc(100% - min(21vh, 21vw) + min(21vh, 21vw))
+  );
+}
+
+.roadMap {
+  max-width: 128rem;
+  margin: auto;
+  position: relative;
+}
+
+.roadMap::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 4px;
+  /* background: rgb(216, 229, 238); */
+  background: var(--color-grey-light-3);
+}
+
+/* 800px / 16 = 50em */
+@media screen and (max-width: 50em) {
+  .roadMap::before {
+    left: 7.8rem;
+  }
+}
+
+/* 600 / 16 = 37.5 */
+@media screen and (max-width: 50em) {
+  .roadMap::before {
+    left: 5.3rem;
+  }
+}

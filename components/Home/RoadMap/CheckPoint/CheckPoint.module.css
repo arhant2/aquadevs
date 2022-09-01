@@ -1,0 +1,113 @@
+.checkPoint {
+  display: flex;
+  margin: 5rem;
+}
+
+/* 800px / 16 = 50em */
+@media screen and (max-width: 50em) {
+  .checkPoint {
+    flex-direction: row-reverse;
+  }
+}
+
+/* 600 / 16 = 37.5 */
+@media screen and (max-width: 50em) {
+  .checkPoint {
+    margin: 2.5rem;
+  }
+}
+
+.checkPoint__right {
+  flex-direction: row-reverse;
+}
+
+.imageContainer {
+  z-index: 10;
+  order: 1;
+  margin: 0 calc(5% - 3rem);
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 0 4px var(--color-white), inset 0 2px 0 rgba(0, 0, 0, 0.08),
+    0 3px 0 4px rgba(0, 0, 0, 0.05);
+}
+
+/* 800px / 16 = 50em */
+@media screen and (max-width: 50em) {
+  .imageContainer {
+    margin: 0;
+  }
+}
+
+.checkPoint__blue .imageContainer {
+  background-color: var(--color-blue);
+}
+
+.checkPoint__pink .imageContainer {
+  background-color: var(--color-pink);
+}
+
+.checkPoint__yellowOrange .imageContainer {
+  background-color: var(--color-yellowOrange);
+}
+
+.image {
+  width: 3.5rem;
+  height: auto;
+  filter: invert(1);
+}
+
+.contentContainer {
+  position: relative;
+  width: 45%;
+  background-color: var(--color-white);
+  padding: 2.5rem;
+  transition: 0.2s;
+  border-radius: 1rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+/* 800px / 16 = 50em */
+@media screen and (max-width: 50em) {
+  .contentContainer {
+    width: auto;
+    flex: 1;
+    margin-left: 1.5rem;
+  }
+}
+
+.contentContainer:hover {
+  transform: scale(1.03);
+}
+
+.contentContainer::before {
+  content: '';
+  position: absolute;
+  right: auto;
+  left: 100%;
+  top: 2.4rem;
+  width: 0;
+  height: 0;
+  border: 1rem solid transparent;
+  border-left-color: var(--color-white);
+}
+
+/* 800px / 16 = 50em */
+@media screen and (max-width: 50em) {
+  .contentContainer::before {
+    border-left-color: transparent;
+    border-right-color: var(--color-white);
+    left: initial;
+    right: 100%;
+  }
+}
+
+.checkPoint__right .contentContainer::before {
+  border-left-color: transparent;
+  border-right-color: var(--color-white);
+  left: initial;
+  right: 100%;
+}
