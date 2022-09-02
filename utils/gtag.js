@@ -7,7 +7,7 @@ export const analyticsPageview = (url) => {
 };
 
 export const analyticsEvent = ({ action, category, label, value }) => {
-  // if (process.env.NODE_ENV !== 'production') return;
+  if (process.env.NODE_ENV !== 'production') return;
 
   window.gtag('event', action, {
     event_category: category,

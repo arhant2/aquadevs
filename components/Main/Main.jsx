@@ -42,7 +42,7 @@ const Main = (props) => {
           content="A community to help learn DSA and contribute towards each other's growth. No more mugging of solutions, now build intuitions for everything."
         />
       </Head>
-      {(process.env.NODE_ENV === 'production' || true) && (
+      {process.env.NODE_ENV === 'production' && (
         <Fragment>
           <Script
             async
