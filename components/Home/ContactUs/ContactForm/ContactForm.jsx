@@ -4,6 +4,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import Input from '../../../../utils/Input/Input';
 import Button from '../../../../utils/Button/Button';
+import { analyticsEvent } from '../../../../utils/gtag';
 import styles from './ContactForm.module.css';
 
 const ContactForm = () => {
@@ -42,6 +43,10 @@ const ContactForm = () => {
     setShowInterestsError(true);
 
     if (nameError || emailError || interestsError) {
+      analyticsEvent({
+        action: 'CONTACT_FORM_SUBMIT_ATTEMPT - Incorrect Data',
+        category: 'engagement',
+      });
       return;
     }
 
@@ -62,7 +67,15 @@ const ContactForm = () => {
       setShowNameError(false);
       setShowEmailError(false);
       setShowInterestsError(false);
+      analyticsEvent({
+        action: 'CONTACT_FORM_SUBMIT_ATTEMPT - Submitted',
+        category: 'engagement',
+      });
     } catch (err) {
+      analyticsEvent({
+        action: 'CONTACT_FORM_SUBMIT_ATTEMPT - Error',
+        category: 'engagement',
+      });
       toast.error('Something went wrong! Please try again.');
     }
 

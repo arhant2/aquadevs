@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import Head from 'next/head';
+import Script from 'next/script';
 
 const Main = (props) => {
   return (
@@ -41,7 +42,27 @@ const Main = (props) => {
           content="A community to help learn DSA and contribute towards each other's growth. No more mugging of solutions, now build intuitions for everything."
         />
       </Head>
-
+      {(process.env.NODE_ENV === 'production' || true) && (
+        <Fragment>
+          <Script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+          />
+          <Script
+            id='google-analytics-initalization'
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+              page_path: window.location.pathname,
+            });
+          `,
+            }}
+          />
+        </Fragment>
+      )}
       {props.children}
     </Fragment>
   );

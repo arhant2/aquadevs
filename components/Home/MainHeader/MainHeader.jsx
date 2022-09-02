@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/future/image';
 import MainText from './MainText/MainText';
-import Button from '../../../utils/Button/Button';
+import Button, { ButtonLinkDomElement } from '../../../utils/Button/Button';
 import styles from './MainHeader.module.css';
 import submarineLogo from '../../../public/submarine.png';
 import arrowLogo from '../../../public/arrow.png';
 import singleLadkaLogo from '../../../public/singleLadka.jpg';
+import { analyticsEvent } from '../../../utils/gtag';
 
 const MainHeader = () => {
   return (
@@ -14,15 +15,18 @@ const MainHeader = () => {
         <MainText />
         <p className={styles.secondaryText}>Let&apos;s dive deep in</p>
         <Button
-          DomElement={({ children, ...otherProps }) => (
-            <Link href='#explore'>
-              <a {...otherProps}>{children}</a>
-            </Link>
-          )}
+          href='#explore'
+          DomElement={ButtonLinkDomElement}
           className={styles.btn}
           big
           rounded
           color='blue'
+          onClick={() => {
+            analyticsEvent({
+              action: 'DEEP_DIVE_BUTTON_CLICKED',
+              category: 'enagement',
+            });
+          }}
         >
           <Image
             style={{ transform: 'translateY(3px)' }}

@@ -1,18 +1,22 @@
 import Link from 'next/link';
-import Button from '../../../../utils/Button/Button';
+import Button, { ButtonLinkDomElement } from '../../../../utils/Button/Button';
+import { analyticsEvent } from '../../../../utils/gtag';
 import styles from './RegisterButton.module.css';
 
 const RegisterButton = () => {
   return (
     <Button
-      DomElement={({ children, ...otherProps }) => (
-        <Link href='#register'>
-          <a {...otherProps}>{children}</a>
-        </Link>
-      )}
+      href='#register'
+      DomElement={ButtonLinkDomElement}
       rounded
       color='blue'
       className={styles.btn}
+      onClick={() =>
+        analyticsEvent({
+          action: 'NAVBAR_REGISTER_BUTTON_CLICKED',
+          category: 'engagement',
+        })
+      }
     >
       Register Now
     </Button>

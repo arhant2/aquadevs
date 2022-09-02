@@ -8,7 +8,9 @@ const Logo = () => {
   return (
     <div className={styles.logoContainer}>
       <Link href='/'>
-        <Image src={whaleLogo} alt='logo' className={styles.image} />
+        <span>
+          <Image src={whaleLogo} alt='logo' className={styles.image} />
+        </span>
       </Link>
       <h3 className={styles.logoHeading}>
         Aqua<span className={styles.blueHeading}>devs</span>

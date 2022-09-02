@@ -1,3 +1,5 @@
+import Image from 'next/future/image';
+import Link from 'next/link';
 import React, { Fragment } from 'react';
 import styles from './Button.module.css';
 
@@ -48,7 +50,13 @@ const Button = ({
     <DomElement className={classNameAct} style={style} {...otherProps}>
       {loading && (
         <Fragment>
-          <img src='/loading.svg' className={styles.loadingIcon} width={18} />{' '}
+          <Image
+            src='/loading.svg'
+            className={styles.loadingIcon}
+            width={18}
+            height={'auto'}
+            alt='loading'
+          />{' '}
           Loading
         </Fragment>
       )}
@@ -58,3 +66,9 @@ const Button = ({
 };
 
 export default Button;
+
+export const ButtonLinkDomElement = ({ children, href, ...otherProps }) => (
+  <Link href={href}>
+    <a {...otherProps}>{children}</a>
+  </Link>
+);

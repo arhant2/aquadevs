@@ -1,3 +1,4 @@
+import { analyticsEvent } from '../../../../utils/gtag';
 import styles from './Person.module.css';
 import Image from 'next/future/image';
 import linkedinImage from '../../../../public/linkedin.png';
@@ -30,6 +31,12 @@ const Person = (props) => {
               className={styles.contactLogo}
               target='_blank'
               rel='noreferrer'
+              onClick={() =>
+                analyticsEvent({
+                  action: `Linkedin - ${props.name}`,
+                  category: 'engagement',
+                })
+              }
             >
               <Image
                 src={linkedinImage}
@@ -42,6 +49,12 @@ const Person = (props) => {
               className={styles.contactLogo}
               target='_blank'
               rel='noreferrer'
+              onClick={() =>
+                analyticsEvent({
+                  action: `Github - ${props.name}`,
+                  category: 'engagement',
+                })
+              }
             >
               <Image
                 width={30}
